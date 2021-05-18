@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 10px;
+  }
+  
+  .box {
+    border: 2px solid black;
+    max-width: 100%;
+  }
+
+  .nav {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 100px 10px 100px;
+  }
+
+  .nav .buttons-left {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .nav .buttons-left > div {
+    border: 2px solid black;
+    width: fit-content;
+    margin-right: 10px;
+    padding-inline: 5px;
+  }
+
+  .nav .buttons-right {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+
+  .nav .buttons-right > div {
+    border: 2px solid black;
+    width: fit-content;
+    margin-left: 10px;
+    padding-inline: 5px;
+  }
+
+  .header {
+    background: #e10600;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    padding: 10px 100px 10px 100px;
+    margin-top: 10px;
+  }
+
+  .header > div {
+    border: 2px solid black;
+    width: fit-content;
+    margin-right: 10px;
+    padding-inline: 5px;
+  }
+  
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    flex-grow: 1;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .article {
+    margin-right: 5px;
+    flex: 1;
+    padding: 20px;
+  }
+
+  .sidebar {
+    margin-left: 5px;
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+
+  .sidebar > div {
+    border: 2px solid black;
+    height: 250px;
+    width: 250px;
+    margin: auto;
+  }

@@ -1,0 +1,67 @@
+<head>
+    <body>
+      <h1 class='header-main' id='header-main'>To-do List</h1>
+      <p id='text-content'>Hello</p>
+  
+      <div>
+        <input type='text' id='input' />
+        <button class='btn' id='submit-btn' onclick='changeHeader();'>
+          Submit
+        </button>
+      </div>
+  
+      <div>
+        <ul id='list'></ul>
+        <input type='text' id='list-input' />
+        <button class='btn' id='list-btn' onclick='addToList();'>
+          Add To List
+        </button>
+      </div>
+  
+      <script>
+        function changeHeader() {
+          document.getElementById('header-main').textContent = document.getElementById('input').value
+        }
+  
+        const headerMain = document.getElementsByClassName('header-main')
+        console.log(headerMain[0].textContent)
+  
+        const pTag = document.getElementById('text-content')
+        console.log(pTag.innerHTML)
+
+        let id=0
+  
+        function addToList() {
+          const inputValue = document.getElementById('list-input').value
+          if (inputValue.length < 1) return
+  
+          const listItem = document.createElement('LI')
+          const deleteButton = document.createElement("button");
+          deleteButton.className = "deleteButton";
+          deleteButton.textContent = "Delete"
+          const listItemText = document.createTextNode(inputValue + " ")
+          listItem.id = id
+          id = id + 1
+          listItem.appendChild(listItemText)
+          listItem.appendChild(deleteButton)
+          document.getElementById('list').appendChild(listItem)
+        }
+
+        function setupListeners() {
+          let todosUl = document.querySelector("ul");
+          todosUl.addEventListener("click", function(event) {
+            let elementClicked = event.target;
+            if (elementClicked.className === "deleteButton") {
+              position = parseInt(elementClicked.parentNode.id);
+              let item = document.getElementById(position);
+              item.parentNode.removeChild(item);
+            } else {
+
+            }
+          });
+        }
+
+        setupListeners()
+      </script>
+    </body>
+  </head>
